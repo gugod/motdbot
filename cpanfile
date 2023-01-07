@@ -1,0 +1,9 @@
+requires 'DateTime';
+requires 'JSON';
+requires 'List::Util';
+requires 'Mastodon::Client';
+requires 'Mojolicious';
+requires 'Path::Tiny';
+requires 'Text::CSV';
+requires 'Twitter::API';
+requires 'YAML';
