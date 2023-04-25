@@ -3,7 +3,6 @@ use v5.36;
 use utf8;
 
 use Class::Load qw(load_class);
-use Twitter::API;
 use Mastodon::Client;
 use Text::CSV qw(csv);
 use YAML ();
@@ -22,7 +21,6 @@ sub main {
     GetOptionsFromArray(
         \@args,
         \%opts,
-        'twitter-config=s@',
         'mastodon-config=s@',
         'message-builder=s',
         'y|yes',
@@ -58,35 +56,7 @@ sub maybe_post ($opts, $msg) {
     say encode_utf8($msg);
     say "------->8---------";
 
-    maybe_tweet($opts, $msg);
     maybe_toot($opts, $msg);
-}
-
-sub maybe_tweet ($opts, $msg) {
-    my $config;
-
-    if ($opts->{"twitter-config"} && -f $opts->{"twitter-config"}) {
-        say "[INFO] Loading config from " . $opts->{"twitter-config"};
-        $config = YAML::LoadFile( $opts->{"twitter-config"} );
-    } else {
-        say "[INFO] No Twitter config.";
-    }
-
-    if ($opts->{y} && $config) {
-        say "#=> Tweet for real";
-        my $twitter = Twitter::API->new_with_traits(
-            traits => "Enchilada",
-            consumer_key        => $config->{consumer_key},
-            consumer_secret     => $config->{consumer_secret},
-            access_token        => $config->{access_token},
-            access_token_secret => $config->{access_token_secret},
-        );
-
-        my $r = $twitter->update($msg);
-        say "https://twitter.com/" . $r->{"user"}{"screen_name"} . "/status/" . $r->{id_str};
-    } else {
-        say "#=> Not tweeting";
-    }
 }
 
 sub maybe_toot ($opts, $msg) {
