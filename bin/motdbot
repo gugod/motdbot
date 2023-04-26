@@ -21,7 +21,7 @@ sub main {
     GetOptionsFromArray(
         \@args,
         \%opts,
-        'mastodon-config=s@',
+        'mastodon-config=s',
         'message-builder=s',
         'y|yes',
         'today=s',
