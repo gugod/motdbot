@@ -5,7 +5,6 @@ requires 'Mastodon::Client';
 requires 'Mojolicious';
 requires 'Path::Tiny';
 requires 'Text::CSV';
-requires 'Twitter::API';
 requires 'YAML';
 requires 'Object::Pad';
 requires 'Geo::Hash';
