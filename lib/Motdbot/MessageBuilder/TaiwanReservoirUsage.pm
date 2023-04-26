@@ -2,12 +2,10 @@ use v5.36;
 use utf8;
 use Object::Pad;
 
-class Motdbot::MessageBuilder::TaiwanReservoirUsage {
+class Motdbot::MessageBuilder::TaiwanReservoirUsage :isa(Motdbot::MessageBuilder) {
     use List::Util ('sum');
     use Mojo::UserAgent ();
     use JSON ();
-
-    field $today;
 
     method build () {
         my $fullest = ["", -1, -1];
