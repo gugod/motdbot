@@ -19,6 +19,6 @@ Print a new FridayThe13Countdown message to STDOUT, as well as to a mastodon ins
 
 ```
 motdbot --message-builder FridayThe13Countdown \
+    --mastodon-config /app/config/mastodon.yml \
     --yes
-    --mastodon-config /app/config/mastodon.yml
 ```
