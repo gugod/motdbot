@@ -11,6 +11,7 @@ class Motdbot::MessageBuilder::TaiwanElectionDayCountdown :isa(Motdbot::MessageB
         # Sorted by date.
         my @votes = (
             # Date, Title, URL
+            ["2024/01/13", "第16任總統副總統及第11屆立法委員選舉", "https://www.cec.gov.tw/central/cms/112news/39148"],
             ["2021/02/06", "高雄市議員黃捷罷免案", "https://www.cec.gov.tw/central/cms/110news/34965"],
             ["2021/10/23", "第10屆立法委員臺中市第2選舉區陳柏惟罷免案", "https://www.cec.gov.tw/central/cms/110news/35453"],
             ["2021/12/18", "全國性公民投票", "https://www.cec.gov.tw/central/cms/110news/35412"],
