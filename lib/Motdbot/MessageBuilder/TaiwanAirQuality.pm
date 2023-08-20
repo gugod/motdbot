@@ -1,6 +1,7 @@
 use v5.38;
 use utf8;
 use feature 'class';
+use Motdbot::MessageBuilder;
 
 class Motdbot::MessageBuilder::TaiwanAirQuality :isa(Motdbot::MessageBuilder) {
     use Mojo::UserAgent;
