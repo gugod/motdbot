@@ -4,7 +4,7 @@ on:
   push:
 
 jobs:
-  tweet:
+  'Message Builder Walkthrough':
     container:
       image: perl:5.38
     runs-on: ubuntu-latest
