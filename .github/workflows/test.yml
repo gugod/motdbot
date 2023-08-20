@@ -1,0 +1,21 @@
+name: Test
+
+on:
+  push:
+
+jobs:
+  tweet:
+    container:
+      image: perl:5.38
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: cpm install -g
+      - name: HelloWorld
+        run: perl -Ilib bin/motdbot --message-builder HelloWorld
+      - name: TaiwanAirQuality
+        run: perl -Ilib bin/motdbot --message-builder TaiwanAirQuality
+      - name: TaiwanElectionDayCountdown
+        run: perl -Ilib bin/motdbot --message-builder TaiwanElectionDayCountdown
+      - name: TaiwanReservoirUsage
+        run: perl -Ilib bin/motdbot --message-builder TaiwanReservoirUsage
