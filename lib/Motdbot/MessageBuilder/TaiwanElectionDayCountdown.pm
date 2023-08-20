@@ -4,7 +4,7 @@ use feature 'class';
 use Motdbot::MessageBuilder;
 
 class Motdbot::MessageBuilder::TaiwanElectionDayCountdown :isa(Motdbot::MessageBuilder) {
-    use DateTime ();
+    use Motdbot::Fun qw(DateTime_from_ymd);
     use List::MoreUtils qw(part);
 
     method build () {
@@ -23,24 +23,6 @@ class Motdbot::MessageBuilder::TaiwanElectionDayCountdown :isa(Motdbot::MessageB
         );
 
         return build_countdown_message( DateTime_from_ymd($self->today), \@votes );
-    }
-
-    sub DateTime_from_ymd ($s) {
-        my @ymd = split /[\/\-]/, $s;
-
-        if (@ymd != 3) {
-            die "Unknown date format in '$s'. Try something like: 2020/01/11";
-        }
-
-        return DateTime->new(
-            year      => $ymd[0],
-            month     => $ymd[1],
-            day       => $ymd[2],
-            hour      => '0',
-            minute    => '0',
-            second    => '0',
-            time_zone => 'Asia/Taipei',
-        );
     }
 
     sub titles ($votes) {
