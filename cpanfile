@@ -10,3 +10,4 @@ requires 'Object::Pad';
 requires 'Geo::Hash';
 requires 'DateTime';
 requires 'List::MoreUtils';
+requires 'Astro::MoonPhase';
