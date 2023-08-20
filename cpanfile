@@ -8,3 +8,5 @@ requires 'Text::CSV';
 requires 'YAML';
 requires 'Object::Pad';
 requires 'Geo::Hash';
+requires 'DateTime';
+requires 'List::MoreUtils';
