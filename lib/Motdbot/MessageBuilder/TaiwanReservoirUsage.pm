@@ -1,6 +1,6 @@
 use v5.38;
 use utf8;
-use Object::Pad;
+use feature 'class';
 
 class Motdbot::MessageBuilder::TaiwanReservoirUsage :isa(Motdbot::MessageBuilder) {
     use List::Util ('sum');

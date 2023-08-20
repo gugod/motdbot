@@ -1,5 +1,6 @@
 use v5.38;
-use Object::Pad;
+use feature 'class';
+use Motdbot::MessageBuilder;
 
 class Motdbot::MessageBuilder::HelloWorld :isa(Motdbot::MessageBuilder) {
     method build () {
